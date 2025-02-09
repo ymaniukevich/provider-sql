@@ -49,6 +49,10 @@ type UserParameters struct {
 	// BinLog defines whether the create, delete, update operations of this user are propagated to replicas. Defaults to true
 	// +optional
 	BinLog *bool `json:"binlog,omitempty"`
+
+	// AuthPlugin defines the MySQL authentication plugin (e.g., mysql_native_password, caching_sha2_password, AWSAuthenticationPlugin).
+	// +optional
+	AuthPlugin string `json:"authPlugin,omitempty"`
 }
 
 // ResourceOptions define the account specific resource limits.
