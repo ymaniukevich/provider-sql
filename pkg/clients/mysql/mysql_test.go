@@ -13,6 +13,7 @@ func TestDSNURLEscaping(t *testing.T) {
 	rawPass := "password^"
 	tls := "true"
 	binlog := false
+	authPlugin := "mysql_native_password"
 	dsn := DSN(user, rawPass, endpoint, port, tls, &binlog)
 	if dsn != fmt.Sprintf("%s:%s@tcp(%s:%s)/?tls=%s&sql_log_bin=%s",
 		user,

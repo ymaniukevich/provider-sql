@@ -71,6 +71,14 @@ spec:
                 description: UserParameters define the desired state of a MySQL user
                   instance.
                 properties:
+                  authPlugin:
+                    description: |-
+                      AuthPlugin defines the MySQL authentication plugin (e.g., mysql_native_password, caching_sha2_password, AWSAuthenticationPlugin).
+                    type: string
+                    enum:
+                    - mysql_native_password
+                    - caching_sha2_password
+                    - AWSAuthenticationPlugin
                   binlog:
                     description: BinLog defines whether the create, delete, update
                       operations of this user are propagated to replicas. Defaults
